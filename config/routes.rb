@@ -7,6 +7,7 @@ CreditcardRoulette::Application.routes.draw do
 
   resources :user_sessions, only: [:new, :create, :destroy]
 
+  resources :games, only: [:new, :create, :show]
   match 'sign_up' => 'registrations#new',              via: :get,  as: :sign_up
   match 'sign_up' => 'registrations#create',           via: :post, as: :sign_up
   match 'activate/:token' => 'registrations#activate', via: :get,  as: :activation
